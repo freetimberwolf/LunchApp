@@ -63,5 +63,17 @@ public class LuncherServiceImpl implements LuncherService {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);						
 		}
 	}
-
+	
+	@Override
+	public HttpStatus addVoteToLuncher(long luncherId) {
+		try{
+			Luncher luncher = luncherRepository.findOne(luncherId);
+			luncher.setVotes(luncher.getVotes()+1);
+			luncherRepository.save(luncher);
+		}catch(Exception e){
+			return HttpStatus.BAD_REQUEST;						
+		}
+		return HttpStatus.OK;
+	}
+	
 }

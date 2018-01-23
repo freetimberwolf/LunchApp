@@ -44,7 +44,7 @@ public class LuncherController {
 		return luncherServiceImpl.getLuncherById(luncherId);
 	}
 	
-	@RequestMapping(value="/getAllLunchers",produces=MediaType.APPLICATION_JSON_VALUE,	method=RequestMethod.GET)
+	@GetMapping(value="/getAllLunchers",produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<List<Luncher>> getAllLunchers(){
 		return luncherServiceImpl.findAll();
