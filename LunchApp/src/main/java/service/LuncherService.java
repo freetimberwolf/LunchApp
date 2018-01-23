@@ -19,4 +19,11 @@ public interface LuncherService {
 	
 	public ResponseEntity<List<Luncher>> findActiveLunchers();
 	
+	/**
+	 * Adds one vote to Luncher that is passed in. 
+	 * @param luncher
+	 * @return HttpStatus.OK for success, HttpStatus.BadRequest otherwise.
+	 */
+	public HttpStatus addVoteToLuncher(long luncherId);
+	
 }
